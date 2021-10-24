@@ -61,6 +61,28 @@ public class TicTakToeTest extends Application {
         primaryStage.show();
     }
 
+    // Kto wygrał
+
+    private boolean whoWin() {
+
+        if (whetherThePlayerWon()) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION, "You Win");
+            alert.showAndWait();
+            Platform.exit();
+            return true;
+
+        }
+        if (whetherTheComputerWon()) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION, "You Loose");
+            alert.showAndWait();
+            Platform.exit();
+            return true;
+        }
+
+        return false;
+
+    }
+
     // Ruch gracza i komputera
 
     public void buttonPlayerAndComputer() {
@@ -77,16 +99,7 @@ public class TicTakToeTest extends Application {
                     button.setText("X");
                     buttonComputer(buttons);
 
-                    if (whetherThePlayerWon()) {
-                        Alert alert = new Alert(Alert.AlertType.INFORMATION, "You Win");
-                        alert.showAndWait();
-                        Platform.exit();
-                    }
-                    if (whetherTheComputerWon()) {
-                        Alert alert = new Alert(Alert.AlertType.INFORMATION, "You Loose");
-                        alert.showAndWait();
-                        Platform.exit();
-                    }
+                    whoWin();
                 }
 
             });
