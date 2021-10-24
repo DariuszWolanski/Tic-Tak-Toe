@@ -1,0 +1,22 @@
+plugins {
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.10'
+}
+
+javafx {
+    version = "17.0.0.1"
+    modules = [ 'javafx.controls' ]
+}
+
+version '1.0-SNAPSHOT'
+//mainClassName = 'com.dariusz.wolanski.tictaktoe.TicTakToe'
+mainClassName = 'com.dariusz.wolanski.tictaktoe.TicTakToeTest'
+
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+}
